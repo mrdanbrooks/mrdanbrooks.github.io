@@ -12,7 +12,16 @@ title: Home
       </a>
     </h1>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+    <span class="post-date"><strong>{{ post.date | date_to_string }}</strong>
+        . {{ post.category }} .
+        <br/>
+        <small> Tags:
+            {% for tag in page.tags %}
+            <a href="/tags/{{ tag }}" title="View posts tagged with &quot;&quot;;"><u>{{ tag }}</u></a>
+            {% if forloop.last != true %} {% endif %}
+            {% endfor %}
+        </small>
+    </span>
 
     {{ post.content }}
   </div>
