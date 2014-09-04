@@ -10,9 +10,9 @@ published: true
 summary: How to mount a particular USB drive to a particular location automatically when it is inserted.
 ---
 
-In Ubuntu, UDev rules are stored in /etc/udev/rules.d/
+In Ubuntu, UDev rules are stored in ``/etc/udev/rules.d/``
 
-UDev rules work by matching attributes of a device (such as SUBSYSTEM=="usb" - note the ==) and then firing off a command when all the rules match (such as RUN+="/my/script.sh")
+UDev rules work by matching attributes of a device (such as ``SUBSYSTEM=="usb"`` - note the ==) and then firing off a command when all the rules match (such as ``RUN+="/my/script.sh"``)
 
 To see what attributes a USB device located at ``/dev/sdc1`` has
 
@@ -28,6 +28,7 @@ ATTRS{serial}=="C52404CA"
 
 This was sufficient to uniquely identify my USB device, but you could also use other attributes such as the vendor name if necessary.
 I created a test rule to make sure things would work the way I wanted them to by making shell script to run when the rule was triggered.
+
 ```
 $ vim /home/dan/test.sh
 ```
@@ -55,7 +56,9 @@ $ sudo udevadm control --reload-rules
 plugging in the device caused the rule to fire, but so did unplugging it.
 So my rule ended up being
 
+```
 ATTRS{serial}=="C52404CA", ACTION=="add", RUN+="/bin/mount /dev/%k /storage"
+```
 
 Reload the udev rules
 
