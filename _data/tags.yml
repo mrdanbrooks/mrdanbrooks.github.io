@@ -2,10 +2,10 @@
   name: uDev 
 
 - slug: osx
-  name: osx
+  name: OS X
 
 - slug: linux
-  name: linux
+  name: Linux
 
 - slug: vim
-  name: vim
+  name: Vim
