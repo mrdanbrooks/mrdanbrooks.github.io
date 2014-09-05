@@ -1,2 +1,11 @@
 - slug: udev
   name: uDev 
+
+- slug: osx
+  name: osx
+
+- slug: linux
+  name: linux
+
+- slug: vim
+  name: vim
