@@ -2,6 +2,7 @@
 layout: post
 title: Getting Expose in XFCE4 using Skippy-xd
 category: systems
+tags: linux xfce
 year: 2014
 month: 6
 day: 10
