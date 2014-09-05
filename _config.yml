@@ -20,3 +20,5 @@ author:
 version:          1.0.0
 github:
   repo:           https://github.com/mrdanbrooks/mrdanbrooks.github.io
+
+gems: [tag_gen]
