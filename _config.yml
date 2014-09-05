@@ -8,9 +8,9 @@ permalink:        pretty
 # Setup
 title:            And now for something completely different
 tagline:          Bean Dip!
-url:              http://danbrooks.info
+url:              http://mrdanbrooks.github.io
 paginate:         1
-baseurl:          /
+baseurl:          http://mrdanbrooks.github.io/
 author:
   name:           Dan Brooks
   url:            http://danbrooks.net
