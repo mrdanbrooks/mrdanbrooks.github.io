@@ -3,7 +3,7 @@ layout: default
 ---
 
 {% assign post = page %}
-{% include get_tags_content.html %}
+{% include gen_tags_content.html %}
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}
