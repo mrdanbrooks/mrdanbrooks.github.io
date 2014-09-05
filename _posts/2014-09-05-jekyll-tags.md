@@ -2,8 +2,10 @@
 layout: post
 title: Making tags work with Github pages
 published: true
+summary: How to get github pages to render tag list pages for you.
 ---
 
+I can't be bothered to install jekyll on my local machine, so plugins for things like tags don't work for me.
 Based on this tutorial by [minddust](http://www.minddust.com/post/tags-and-categories-on-github-pages/), I was able to get tags to semi-automatically fill out tag pages. You still have to make a page for each tag, but at least it is automatically populated with posts now. 
 
 I created the file ``_includes/gen_tags_content.html``.
