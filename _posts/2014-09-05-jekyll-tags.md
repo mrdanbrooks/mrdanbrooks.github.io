@@ -6,9 +6,9 @@ published: true
 
 Based on this tutorial by [minddust](http://www.minddust.com/post/tags-and-categories-on-github-pages/), I was able to get tags to semi-automatically fill out tag pages. You still have to make a page for each tag, but at least it is automatically populated with posts now. 
 
-I created the file ``_includes/gen_tags_content.html``
+I created the file ``_includes/gen_tags_content.html``.
 
-```
+```html
 {% if post.tags.size > 0 %}
     {% capture tags_content %}Posted with {% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
     {% for post_tag in post.tags %}
