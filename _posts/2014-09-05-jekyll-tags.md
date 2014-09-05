@@ -8,7 +8,7 @@ Based on this tutorial by [minddust](http://www.minddust.com/post/tags-and-categ
 
 I created the file ``_includes/gen_tags_content.html``
 
-```markdown
+```
 {% if post.tags.size > 0 %}
     {% capture tags_content %}Posted with {% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
     {% for post_tag in post.tags %}
@@ -45,7 +45,7 @@ I found the first line to be necessary because the script in ``_include/gen_tags
 
 On your **post entry**, you can now add tags in the header. 
 
-```markdown
+```
 ---
 layout: post
 title: How To Use Tags And Categories On GitHub Pages Without Plugins
@@ -64,7 +64,7 @@ relative_permalinks: true
 
 Next we need to make a layout template for our tag lists. Put the following in a file at ``_layouts/blog_by_tag.html``
 
-```html
+```
 ---
 layout: default
 ---
