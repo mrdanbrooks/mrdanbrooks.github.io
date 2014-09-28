@@ -7,7 +7,7 @@ layout: default
     {% if site.tags[page.tag] %}
         {% for post in site.tags[page.tag] %}
         <div class="post">
-            <h1 class="post-title"><a href="{{ post.url }}/">{{ post.title }}</a></h1>
+            <h2 class="post-title"><a href="{{ post.url }}/">{{ post.title }}</a></h2>
             <span class="post-date"><strong>{{ post.date | date_to_string }}</strong>{{ post.category }}</span>
             {{ post.summary }}
         </div>
