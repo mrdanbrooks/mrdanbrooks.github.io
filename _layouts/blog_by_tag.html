@@ -8,7 +8,7 @@ layout: default
         {% for post in site.tags[page.tag] %}
         <div class="post">
             <h3 class="post-title"><a href="{{ post.url }}/">{{ post.title }}</a></h3>
-            <span class="post-date"><strong>{{ post.date | date_to_string }}</strong> {{ post.category }}</span>
+            <!--<span class="post-date"><strong>{{ post.date | date_to_string }}</strong> {{ post.category }}</span>-->
             {{ post.summary }}
         </div>
         {% endfor %}
