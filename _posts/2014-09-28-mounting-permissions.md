@@ -43,13 +43,14 @@ To get a corresponding list of those group's ids,
 $ id -G username
 ```
 
-I decided that I wanted the owner to be root, and the group to be anyone in the _users_ group.
+I decided that I wanted the owner to be the "default" user instead of root, and the group to be anyone in the _users_ group.
+The "default" user is the first one created on the system, and should have id 1000, and the _users_ group should have id 100.
 The owner and group members would have full rwx permissions, while everyone else would just have r-x.
 
 The resulting command was
 
 ```bash
-$ sudo mount -o umask=0002,uid=0,gid=100 /dev/sda1 /storage
+$ sudo mount -o umask=0002,uid=1000,gid=100 /dev/sda1 /storage
 ```
 
 
