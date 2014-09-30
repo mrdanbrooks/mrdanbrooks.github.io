@@ -6,7 +6,7 @@ category: programming
 year: 2014
 month: 9
 day: 30
-published: true
+published: false
 summary: How to hide files in jekyll
 ---
 
