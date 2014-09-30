@@ -9,3 +9,4 @@ day: 30
 published: true
 summary: How to hide files in jekyll
 ---
+test
