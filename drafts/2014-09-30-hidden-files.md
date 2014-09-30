@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hiding files
-tags: 
+tags: test
 category: programming
 year: 2014
 month: 9
