@@ -10,7 +10,7 @@ relative_permalinks: true
 title:            And now for something completely different
 tagline:          Bean Dip!
 url:              http://mrdanbrooks.github.io
-paginate:         1
+paginate:         5
 baseurl:          http://mrdanbrooks.github.io/
 author:
   name:           Dan Brooks
