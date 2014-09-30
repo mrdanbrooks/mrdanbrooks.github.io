@@ -1,7 +1,7 @@
 ---
 layout: hiddenpost
 title: Hiding files
-tags: test
+tags: python
 category: programming
 year: 2014
 month: 9
