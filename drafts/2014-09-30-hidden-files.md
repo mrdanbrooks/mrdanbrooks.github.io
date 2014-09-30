@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: hiddenpost
 title: Hiding files
 tags: test
 category: programming
@@ -9,5 +9,3 @@ day: 30
 published: false
 summary: How to hide files in jekyll
 ---
-
-How do I hide files in jekyll?
