@@ -1,5 +1,5 @@
 ---
-layout: hiddenpost
+layout: mypost
 title: Hiding files
 tags: python
 category: programming
