@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% capture post_dir %}{{ page.dir | split:"/" | first }}{% endcapture %}
+{% capture post_dir %}{{ page.dir | remove_first:'/' | split:"/" | first }}{% endcapture %}
 
 <div> Dir = {{ post_dir }} </div>
 <div> page.dir = {{ page.dir }} </div>
