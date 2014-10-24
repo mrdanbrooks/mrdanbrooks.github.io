@@ -9,9 +9,9 @@ relative_permalinks: true
 # Setup
 title:            And now for something completely different
 tagline:          Bean Dip!
-url:              http://mrdanbrooks.github.io
+url:              http://weaselpipe.com #http://mrdanbrooks.github.io
 paginate:         5
-baseurl:          http://mrdanbrooks.github.io/
+baseurl:          http://weaselpipe.com #http://mrdanbrooks.github.io/
 author:
   name:           Dan Brooks
   url:            http://danbrooks.net
