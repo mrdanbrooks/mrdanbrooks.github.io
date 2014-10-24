@@ -14,7 +14,7 @@ I've been trying to setup tripwire, well, I _did_ setup tripwire.
 That was the easy part. The hard part has been getting it to email me reports.
 The problem is that I have comcast internet... and they do shitty things, like block port 25.
 I know they are well intentioned, trying to block spamers and all - but they are still a bunch of bitches. 
-(Steve Jenkins)[http://www.stevejenkins.com/blog/2013/06/howto-get-around-comcast-port-25-block-with-a-postfix-server/] wrote an article about how to get past the port 25 block with a postfix server.
+[Steve Jenkins](http://www.stevejenkins.com/blog/2013/06/howto-get-around-comcast-port-25-block-with-a-postfix-server/) wrote an article about how to get past the port 25 block with a postfix server.
 He suggested adding the following lines to your **/etc/postfix/main.cf** file:
 
 ```
@@ -64,7 +64,7 @@ sudo apt-get install ssmtp
 ```
 
 This automatically removed postfix, but amazingly did not also uninstall tripwire. 
-This may come back to haunt me in the future - so I might need to invoke (equivs)[http://shallowsky.com/blog/linux/install/blocking-deb-dependencies.html], a tool that can be used to build "fake" deb files to be used to "satisfy" debian dependencies...
+This may come back to haunt me in the future - so I might need to invoke [equivs](http://shallowsky.com/blog/linux/install/blocking-deb-dependencies.html) at some point soon, a tool that can be used to build "fake" deb files to be used to "satisfy" debian dependencies...
 
 For now though, the trick is that ssmtp can __act__ like sendmail. 
 In fact, if you don't have **libmail-sendmail-perl** or sendmail itself installed, /usr/sbin/sendmail will get automatically symlinked to ssmtp.
@@ -76,7 +76,7 @@ We can configure ssmtp by editing **/etc/ssmtp/ssmtp.conf**:
 sudo vim /etc/ssmtp/ssmtp.conf
 ```
 
-and updating the file with the following settings recommended by this (website)[https://wiki.archlinux.org/index.php/SSMTP]:
+and updating the file with the following settings recommended by this [website](https://wiki.archlinux.org/index.php/SSMTP):
 
 ```
 # The user that gets all the mails (UID < 1000, usually the admin)
