@@ -61,17 +61,15 @@ Quoting Text
 
 I like to quote other peoples websites
 
------------------------------
 > some text
 > more text
 > line three
 > > Indented quote
 > > line two of indented quote
-
+> 
 > back to original text
 > text text text
 > even more 
------------------------------
 
 
 Markdown lets you be lazy
@@ -82,7 +80,7 @@ more text
 line three
 > > Indented quote
 > > line two of indented quote
-
+>
 back to original text
 text text text
 > even more 
