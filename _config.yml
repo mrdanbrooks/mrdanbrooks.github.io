@@ -11,7 +11,7 @@ title:            And now for something completely different
 tagline:          Bean Dip!
 url:              http://weaselpipe.com #http://mrdanbrooks.github.io
 paginate:         5
-#baseurl:          weaselpipe.com/ #http://mrdanbrooks.github.io/
+baseurl:          weaselpipe.com/ #http://mrdanbrooks.github.io/
 author:
   name:           Dan Brooks
   url:            http://danbrooks.net
