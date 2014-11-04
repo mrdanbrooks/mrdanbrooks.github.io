@@ -62,28 +62,30 @@ Quoting Text
 I like to quote other peoples websites
 
 -----------------------------
-> Line one
-> line two
+> some text
+> more text
 > line three
 > > Indented quote
 > > line two of indented quote
-> Line four
-> line five
-> line six
+
+> back to original text
+> text text text
+> even more 
 -----------------------------
 
 
 Markdown lets you be lazy
 
 -----------------------------
-> Line one
-line two
+> some text
+more text
 line three
 > > Indented quote
 > > line two of indented quote
-Line four
-line five
-> line six
+
+back to original text
+text text text
+> even more 
 -----------------------------
 
 
