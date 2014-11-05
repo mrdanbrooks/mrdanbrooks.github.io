@@ -1,0 +1,11 @@
+- category: programming
+  icon: code
+
+- category: systems
+  icon: device-desktop
+
+- category: security
+  icon: lock
+
+- category: random
+  icon: beer
