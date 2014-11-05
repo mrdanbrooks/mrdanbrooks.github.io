@@ -1,0 +1,12 @@
+{% comment %} 
+Assign a boolean variable called draft that is true if the page is in the draft
+directory, otherwise false. The directory is the _rendered_ directory after 
+jekyll has run, not the source directory.
+{% endcomment %}
+
+{% capture page_dir %}{{ page.dir | remove_first:'/' | split:"/" | first }}{% endcapture %}
+{% assign draft = false %}
+
+{% if page_dir == 'drafts' %}
+    {% assign draft = true %}
+{% endif %}

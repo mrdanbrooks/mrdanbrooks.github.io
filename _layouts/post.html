@@ -2,13 +2,17 @@
 layout: default
 ---
 
-{% assign post = page %}
-{% include gen_tags_content.html %}
+{% include gen_tags_content.liquid %}
+{% include detect_drafts.liquid %}
 
 <h2>{{ page.title }}</h2>
 <p class="meta">
 <!-- <strong> {{ page.category }} </strong> -->
-{{ page.date | date_to_string }}&nbsp;<small>{{ tags_content }}</small>
+{% unless draft %}
+    <!-- Drafts don't get parsed as posts, so they don't have a date --> 
+    {{ page.date | date_to_string }}
+{% endunless %}
+&nbsp;<small>{{ tags_content }}</small>
 </p>
 
 <div class="post">
