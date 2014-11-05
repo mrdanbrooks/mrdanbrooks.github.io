@@ -17,7 +17,7 @@ Generate the tag links under the tag {{ tags_list }}
 {% assign tags_list = "Posted under: " %} 
 {% for tag in all_tags %}
     {% capture tags_list %}{{ tags_list }}
-        <a href="/tags/{{ tag }}"<u>{{ tag }}</u></a>
+        <a href="/tags/{{ tag }}"><u>{{ tag }}</u></a>
         {% if forloop.last != true %}, {% endif %}
     {% endcapture %}
 {% endfor %}
