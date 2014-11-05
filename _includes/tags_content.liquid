@@ -1,0 +1,24 @@
+{% comment %} 
+expand tag array by turning the original array into a string with each element seperated by a "|". 
+At each element, replace any spaces with "|" as well.
+Finally, create a new array by doing a split on the "|"s.
+This fixes the problem with tags not being seperated properly in drafts.
+{% endcomment %}
+{% assign all_tags = ""%}
+{% for tag in page.tags %}
+    {% capture all_tags %}{{ all_tags }}{{ tag | replace:" ","|" }}{% if forloop.last != true %}|{% endif %}{% endcapture %}
+{% endfor %}
+{% assign all_tags = all_tags | split:"|" %}
+
+
+{% comment %} 
+Generate the tag links under the tag {{ tags_list }}
+{% endcomment %}
+{% assign tags_list = "Posted under: " %} 
+{% for tag in all_tags %}
+    {% capture tags_list %}{{ tags_list }}
+        <a href="/tags/{{ tag }}"<u>{{ tag }}</u></a>
+        {% if forloop.last != true %}, {% endif %}
+    {% endcapture %}
+{% endfor %}
+

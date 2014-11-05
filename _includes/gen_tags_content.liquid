@@ -1,10 +1,25 @@
+{% comment %}
+This is part of the deprecated original tag system.
+It was slightly more flexible in that you could define a tags.yml in _data like so:
 
+- slug: osx
+  name: OS X
+
+- slug: linux
+  name: Linux
+
+That would support nicer formatting in tags. Unfortunately it didn't work in 
+draft files for some reason (it didn't properly split the tags). The new 
+tags_content.liquid system doesn't support this yet, but there is no reason it
+couldn't. So this file is left here for when I decide to implement it in the
+new system.
+{% endcomment %}
 {% assign post = page %}
-{% if post.tags.size > 0 %}
-    {% capture tags_content %}Posted with {% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
-    {% for post_tag in post.tags %}
+{% if page.tags.size > 0 %}
+    {% capture tags_content %}Posted with {% if page.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+    {% for page_tag in page.tags %}
         {% for data_tag in site.data.tags %}
-            {% if data_tag.slug == post_tag %}
+            {% if data_tag.slug == page_tag %}
                 {% assign tag = data_tag %}
             {% endif %}
         {% endfor %}
@@ -13,7 +28,7 @@
             {% assign tags_content = tags_content_temp %}
             {% assign tag  = false  %}
         {% else %}
-            {% capture tags_content_temp %}{{ tags_content }}<a href="/tags/{{ post_tag }}/">{{ post_tag }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+            {% capture tags_content_temp %}{{ tags_content }}<a href="/tags/{{ page_tag }}/">{{ page_tag }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
             {% assign tags_content = tags_content_temp %}
         {% endif %}
     {% endfor %}
