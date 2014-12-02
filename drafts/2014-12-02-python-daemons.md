@@ -10,8 +10,10 @@ published: true
 summary: Getting a Python script to run in the background (as a service) on boot
 ---
 
-This is republishing an [article by Stephen C Phillips](http://blog.scphillips.com/2013/07/getting-a-python-script-to-run-in-the-background-as-a-service-on-boot/) I found to be very helpful.
-If you find this helpful, you should link to his site rather then this one.
+I was looking up how to write a simple sysvinit script (yes, I know it is going out of style) for a python script I had written when I came across this [article by Stephen C Phillips](http://blog.scphillips.com/2013/07/getting-a-python-script-to-run-in-the-background-as-a-service-on-boot/).
+It was exactly what I was looking for.
+Since the internet is such an ephemeral place, I have re-posted his article here to make sure I don't loose it.
+If you find this information helpful and the link still works, you should link to his site rather then this one.
 
 ----------------------------------------
 
