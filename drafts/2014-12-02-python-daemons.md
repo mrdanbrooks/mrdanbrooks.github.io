@@ -12,11 +12,12 @@ summary: Getting a Python script to run in the background (as a service) on boot
 
 This is republishing an [article by Stephen C Phillips](http://blog.scphillips.com/2013/07/getting-a-python-script-to-run-in-the-background-as-a-service-on-boot/) I found to be very helpful.
 If you find this helpful, you should link to his site rather then this one.
+
 ----------------------------------------
 
 
 Getting a Python script to run in the background (as a service) on boot
-=======================================================================
+---------------------------
 
 For some of my projects I write a simple service in Python and need it to start running in the background when the Raspberry Pi boots. 
 Different Linux distributions use different ways of starting and stopping services (some now use Upstart, some systemd). 
