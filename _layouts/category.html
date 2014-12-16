@@ -1,10 +1,9 @@
 ---
 layout: default
 ---
-
-<h2>{{ page.categorypages }}</h2>
+<h2>{{ page.category }}</h2>
 <div class="listing">
-    {% for post in page.categorypages %}
+    {% for post in site.categories[page.category] %}
     <div class="post other link">
     {% comment %} Custom Icons for Categories {% endcomment %}
     {% assign caticon = "file-text" %}
