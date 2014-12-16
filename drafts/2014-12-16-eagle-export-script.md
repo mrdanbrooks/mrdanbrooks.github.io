@@ -10,7 +10,7 @@ published: true
 summary: A script for exporting PCBs for etching using Eagle CAD
 ---
 
-The following commands can be entered into eagle cad to produce two black and white images, suitable for use in etching PCBs.
+The following commands can be entered into eagle cad to produce images suitable for use in etching PCBs.
 
 ```
 DISPLAY ALL
@@ -23,7 +23,8 @@ EXPORT IMAGE ~/Desktop/top.png MONOCHROME 600;
 DISPLAY ALL
 ```
 
-This will produce two monochrome images that can be printed using a laser printer for etching.
+This will produce two monochrome images, one for the top and one for the back of the board.
+Each side will consist of the traces, pads, and vias.
 
 
 These commands can also be put (as is) into a file and saved as a script.
