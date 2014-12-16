@@ -3,7 +3,9 @@ layout: default
 ---
 <!--<h2>{{ page.category }}</h2>-->
 <div class="listing">
-    {% for post in site.categories[page.category] %}
+    {% for cat in page.category %}
+    {% for post in site.categories[cat] %}
+    {% commment %}    {% for post in site.categories[page.category] %} {% endcomment %}
     <div class="post other link">
     {% comment %} Custom Icons for Categories {% endcomment %}
     {% assign caticon = "file-text" %}
@@ -24,5 +26,6 @@ layout: default
     {{ post.summary }}
     <!-- <p> {{ post.excerpt }}</p> -->
     </div>
+    {% endfor %}
     {% endfor %}
 </div>
