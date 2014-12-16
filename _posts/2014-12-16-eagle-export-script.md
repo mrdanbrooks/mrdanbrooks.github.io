@@ -2,7 +2,6 @@
 layout: post
 title: Exporting for etching in Eagle CAD
 tags: 
-category: random
 year: 2014
 month: 12
 day: 16
