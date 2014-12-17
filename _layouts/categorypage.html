@@ -3,16 +3,13 @@ layout: default
 ---
 <!--<h2>{{ page.category }}</h2>-->
 
-<!--
-Allows Category tag of cateogypage pages to specify multiple categories 
--->
+<!-- Allows Category tag of cateogypage pages to specify multiple categories -->
 {% assign all_categories = ""%}
 {% for cat in page.category %}
     {% capture all_categories %}{{ all_categories }}{{ cat | replace:" ","|" }}{% if forloop.last != true %}|{% endif %}{% endcapture %}
 {% endfor %}
 {% assign all_categories = all_categories | split:"|" %}
 
-<h2> Category: {% for cat in all_categories %} {{ cat }} {% endfor %} </h2>
 <div class="listing">
     {% for cat in all_categories %} <!-- all_categories=page.category -->
     {% for post in site.categories[cat] %} <!-- cat=page.category -->
