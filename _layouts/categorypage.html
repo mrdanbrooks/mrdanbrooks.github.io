@@ -12,6 +12,7 @@ Allows Category tag of cateogypage pages to specify multiple categories
 {% endfor %}
 {% assign all_categories = all_categories | split:"|" %}
 
+<h2> {% for cat in all_categories %} {{ cat }} {% endfor %} </h2>
 <div class="listing">
     {% for cat in all_categories %}
     {% for post in site.categories[cat] %}
