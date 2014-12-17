@@ -15,9 +15,10 @@ Allows Category tag of cateogypage pages to specify multiple categories
 <div class="listing">
     {% for cat in all_categories %}
     {% for post in site.categories[cat] %}
-    {% commment %}
+    {% comment %}
     {% for cat in page.category %}
-    {% for post in site.categories[page.category] %} {% endcomment %}
+    {% for post in site.categories[page.category] %} 
+    {% endcomment %}
     <div class="post other link">
     {% comment %} Custom Icons for Categories {% endcomment %}
     {% assign caticon = "file-text" %}
