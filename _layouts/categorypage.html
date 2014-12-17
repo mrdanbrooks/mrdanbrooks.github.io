@@ -3,9 +3,9 @@ layout: default
 ---
 <!--<h2>{{ page.category }}</h2>-->
 
-{% comment %}
+<!--
 Allows Category tag of cateogypage pages to specify multiple categories 
-{% endcomment %}
+-->
 {% assign all_categories = ""%}
 {% for cat in page.category %}
     {% capture all_categories %}{{ all_categories }}{{ cat | replace:" ","|" }}{% if forloop.last != true %}|{% endif %}{% endcapture %}
@@ -14,12 +14,8 @@ Allows Category tag of cateogypage pages to specify multiple categories
 
 <h2> Category: {% for cat in all_categories %} {{ cat }} {% endfor %} </h2>
 <div class="listing">
-    {% for cat in all_categories %}
-    {% for post in site.categories[cat] %}
-    {% comment %}
-    {% for cat in page.category %}
-    {% for post in site.categories[page.category] %} 
-    {% endcomment %}
+    {% for cat in all_categories %} <!-- all_categories=page.category -->
+    {% for post in site.categories[cat] %} <!-- cat=page.category -->
     <div class="post other link">
     {% comment %} Custom Icons for Categories {% endcomment %}
     {% assign caticon = "file-text" %}
