@@ -14,7 +14,11 @@ This fixes the problem with tags not being seperated properly in drafts.
 {% comment %} 
 Generate the tag links under the tag {{ tags_list }}
 {% endcomment %}
-{% assign tags_list = "Posted under: " %} 
+{% if all_tags.size > 0 %}
+    {% assign tags_list = "Posted under: " %} 
+{% else %}
+    {% assign tags_list = "<!-- No Tags -->" %}
+{% endif %}
 {% for tag in all_tags %}
     {% capture tags_list %}{{ tags_list }}
         <a href="/tags/{{ tag }}"><u>{{ tag }}</u></a>
