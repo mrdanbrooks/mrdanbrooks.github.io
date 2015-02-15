@@ -32,7 +32,7 @@ Note: If you don't want to use a passphrase  don't enter one.
 ssh-keygen -t rsa
 ```
 
-If you name the keyfile something strange like _id_rsa.fish_, you might have to add it manually to the clients ``~/.ssh/config`` by adding the following line to the top of the file
+If you name the keyfile something strange like *id_rsa.fish*, you might have to add it manually to the clients ``~/.ssh/config`` by adding the following line to the top of the file
 
 ```
 IdentityFile ~/.ssh/id_rsa.fish
