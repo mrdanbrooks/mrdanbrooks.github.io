@@ -17,9 +17,11 @@ http://askubuntu.com/questions/48129/how-to-create-a-restricted-ssh-user-for-por
 By default the ``useradd`` command doesnt create home directories. 
 We also don't want them to have a shell, so we point them towards ``/bin/false`` instead of ``/bin/sh``. [reference][1]
 
+{% highlight bash %}
 ```
 sudo useradd -s /bin/false USERNAME
 ```
+{% endhighlight %}
 
  * **-r** Optionally makes this a system user
  * **-s** Shell command to execute
