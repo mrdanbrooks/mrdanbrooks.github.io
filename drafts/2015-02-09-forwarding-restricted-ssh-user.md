@@ -45,9 +45,6 @@ This can be changed by setting the ``AuthorizedKeysFile`` directive in ``/etc/ss
 We want to do this under the ``Match User`` directive so that this only applies to our special user.
 So where could we store the keys? 
 Well, anywhere you want, but as an example lets put it in another users ssh directory that we can log into.
-Note: for this example to work, we need to set ``StrictMode no`` - this sounds really scary but what it means is 
-> If this file, the ~/.ssh directory, or the user's home directory are writable by other users, then the file could be modified or replaced by unauthorized users.
-> In this case, sshd will not allow it to be used unless the StrictModes option has been set to "no". (from ``man sshd``)
 
 Edit the server settings in ``/etc/ssh/sshd_config`` 
 
@@ -60,11 +57,24 @@ Match User NEWUSER
    ...
 ```
 
+Note: for this example to work, we need to set ``StrictMode no`` - this sounds really scary but here is what it means
+
+> Specifies whether sshd(8) should check file modes and ownership of the user's files and home directory before accepting login.
+> This is normally desirable because novices sometimes accidentally leave their directory or files world-writable.
+> The default is "yes".
+> Note that this does not apply to ChrootDirectory, whose permissions and ownership are checked unconditionally. (from ``man sshd_config``
+
+The reason we need to set ``StrictMode no`` is for the following reason (from ``man sshd``)
+> If this file (authorized_keys), the ~/.ssh directory, or the user's home directory are writable by other users, then the file could be modified or replaced by unauthorized users.
+> In this case, sshd will not allow it to be used unless the StrictModes option has been set to "no".
+
+
 Next, logged in the the ANOTHERUSER, create the authorization file and set the group policies such that NEWUSER can read it.
 
 ```
 $ cat id_rsa.fish.pub >> ~/.ssh/NEWUSER_authorized_keys
 $ sudo chgrp NEWUSER ~/.ssh/NEWUSER_authorized_keys
+$ sudo chmod 640 ~/.ssh/NEWUSER_authorized_keys
 ```
 
 
