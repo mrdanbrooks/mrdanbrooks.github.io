@@ -21,11 +21,10 @@ We also don't want them to have a shell, so we point them towards ``/bin/false``
 sudo useradd -s /bin/false USERNAME
 ```
 
- * **-r** Optionally makes this a system user
- * **-s** Shell command to execute
+**-r** Optionally makes this a system user<br/>
+**-s** Shell command to execute
 
 
-## References
 
 [1]: http://askubuntu.com/questions/29359/how-to-add-user-without-home
 
