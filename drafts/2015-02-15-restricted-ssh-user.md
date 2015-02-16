@@ -61,14 +61,11 @@ Files and their options that alter behavior are:
    * ``AllowTcpForwarding``
    * ``ForceCommand`` - "Forces the execution of the command specified by ForceCommand, ignoring any command supplied by the client and ~/.ssh/rc if present. The command is invoked by using the user's login shell with the -c option."
    * ``GatewayPorts`` - "Specifies whether remote hosts are allowed to connect to ports forwarded for the client. By default, sshd(8) binds remote port forwardings to the loopback address. This prevents other remote hosts from connecting to forwarded ports. GatewayPorts can be used to specify that sshd should allow remote port forwardings to bind to non-loopback addresses, thus allowing other hosts to connect."
-   * ``PermitOpen``:
-
-   * > Specifies the destinations to which TCP port forwarding is permitted. The forwarding specification must be one of the following forms:
-   * > ``PermitOpen host:port``
-     > ``PermitOpen IPv4_addr:port``
-     > ``PermitOpen [IPv6_addr]:port``
-     > Multiple forwards may be specified by separating them with whitespace. An argument of 'any' can be used to remove all restrictions and permit any forwarding requests. By default all port forwarding requests are permitted.
-     > 
+   * ``PermitOpen``: Specifies the destinations to which TCP port forwarding is permitted. The forwarding specification must be one of the following forms: <br/>
+     ``PermitOpen host:port`` <br/>
+     ``PermitOpen IPv4_addr:port`` <br/>
+     ``PermitOpen [IPv6_addr]:port`` <br/>
+     Multiple forwards may be specified by separating them with whitespace. An argument of 'any' can be used to remove all restrictions and permit any forwarding requests. By default all port forwarding requests are permitted.
 
  * 
    * ``PermitTunnel`` - Specifies whether tun(4) device forwarding is allowed. The default is 'no'
