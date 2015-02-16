@@ -57,19 +57,19 @@ Match User NEWUSER
    ...
 ```
 
-Note: for this example to work, we need to set ``StrictMode no`` - this sounds really scary but here is what it means
+Note: for this example to work, we need to set ``StrictMode no`` - this sounds really scary but here is what it means (from ``man sshd_config``)
 
 > Specifies whether sshd(8) should check file modes and ownership of the user's files and home directory before accepting login.
 > This is normally desirable because novices sometimes accidentally leave their directory or files world-writable.
 > The default is "yes".
-> Note that this does not apply to ChrootDirectory, whose permissions and ownership are checked unconditionally. (from ``man sshd_config``
+> Note that this does not apply to ChrootDirectory, whose permissions and ownership are checked unconditionally. 
 
-The reason we need to set ``StrictMode no`` is for the following reason (from ``man sshd``)
+The reason we need to set ``StrictMode no`` is because we just violated the following statement (from ``man sshd``) when we directed the NEWUSERS authorized_keys file to look in ANOTHERUSER's directory.
+
 > If this file (authorized_keys), the ~/.ssh directory, or the user's home directory are writable by other users, then the file could be modified or replaced by unauthorized users.
 > In this case, sshd will not allow it to be used unless the StrictModes option has been set to "no".
 
-
-Next, logged in the the ANOTHERUSER, create the authorization file and set the group policies such that NEWUSER can read it.
+Moving on, log in as ANOTHERUSER, create the authorization file and set the group policies such that NEWUSER can read it.
 
 ```
 $ cat id_rsa.fish.pub >> ~/.ssh/NEWUSER_authorized_keys
@@ -77,6 +77,23 @@ $ sudo chgrp NEWUSER ~/.ssh/NEWUSER_authorized_keys
 $ sudo chmod 640 ~/.ssh/NEWUSER_authorized_keys
 ```
 
+!! Locking things down
+
+Here are some additional settings we want to impose upon our NEWUSER. [[link]][1]
+We will add these to the ``/etc/ssh/sshd_config`` file.
+
+```
+...
+Match User NEWUSER
+   AllowTcpForwarding yes
+   X11Forwarding no
+   PermitTunnel no
+   GatewayPorts no
+   PasswordAuthentication no
+#   AllowAgentForwarding no
+#   PermitOpen localhost:8080
+   ForceCommand echo 'This account can only be used for local access'
+```
 
 
 !! Testing SSHD settings
