@@ -11,7 +11,9 @@ summary: An excellent article on creating a restricted SSH user.
 ---
 
 This is a repost of a very helpful article on [askubuntu.com](http://askubuntu.com/questions/48129/how-to-create-a-restricted-ssh-user-for-port-forwarding), written by [Lekensteyn](http://askubuntu.com/users/6969/lekensteyn) on June 22nd, 2011. 
+
 I am reposting it so that it doesn't disappear on me!
+
 -----
 
 Adding a restricted user consists of two parts: 1. Creating the user 2. Configuring the SSH daemon (sshd)
