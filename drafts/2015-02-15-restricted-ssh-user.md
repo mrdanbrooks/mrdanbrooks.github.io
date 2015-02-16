@@ -7,8 +7,12 @@ year: 2011
 month: 06
 day: 22
 published: true
-summary: an askubuntu.com response!
+summary: An excellent article on creating a restricted SSH user.
 ---
+
+This is a repost of a very helpful article on [askubuntu.com](http://askubuntu.com/questions/48129/how-to-create-a-restricted-ssh-user-for-port-forwarding), written by [Lekensteyn](http://askubuntu.com/users/6969/lekensteyn) on June 22nd, 2011. 
+I am reposting it so that it doesn't disappear on me!
+-----
 
 Adding a restricted user consists of two parts: 1. Creating the user 2. Configuring the SSH daemon (sshd)
 
@@ -69,112 +73,70 @@ Files and their options that alter behavior are:
    * ``PermitTunnel`` - Specifies whether tun(4) device forwarding is allowed. The default is 'no'
    * ``X11Forwarding`` - Specifies whether X11 forwarding is permitted. The default is 'no'
 
-----------------------------------------
+## Applying the restrictions
 
-To use this template:
-=====================
+Modifying the system-wide configuration file ``/etc/ssh/sshd_config`` allows the configuration be applied even if password-based authentication is applied or if the restrictions in ``~/.ssh/authorized_keys`` are accidentally removed. 
+If you've modified the global defaults, you should uncomment the options accordingly.
 
- - Make a copy
- - Change the file name
- - Update the header info
-  * change published to `true'
- - Delete these quick notes!
-
-Add a tag!
-----------
-
-Its fast and easy!
-
-Just go to `~/Source/notes/tags/` and add a file.md with the following content
-
-    ---
-    layout: blog_by_tag
-    title: <tagnamegoeshere> posts
-    tag: <tagnamegoeshere>
-    permalink: <tagnamegoeshere>/
-    ---
-
-Don't forget to add the tag file when you commit!
-
-Formatting
-----------
-
-_Italic_
-
-**bold**
-
-`FixedSpace`
-
-Links
------
-
-Make [External Links](www.google.com) like this.
-
-Make [Post Links]({% post_url 2014-09-04-udev-usb-mounting %}) like this.
-
-Make [Static internal Links](/about/) would go to weaselpipe.com/about/.
-
-Making [Reference Style Links][google] can be done [like][yahoo] so. Later on there should be a line like this
-
-[google]: http://www.google.com/ "This is google"
-[yahoo]: http://www.yahoo.com/ "Yahoo"
-
-
-Writing code
-------------
-
-Description of what you are looking at
-
-``` 
-Code Here
+```
+Match User limited-user
+   #AllowTcpForwarding yes
+   #X11Forwarding no
+   #PermitTunnel no
+   #GatewayPorts no
+   AllowAgentForwarding no
+   PermitOpen localhost:62222
+   ForceCommand echo 'This account can only be used for [reason]'
 ```
 
-Quoting Text
-------------
+Now add a user:
 
-I like to quote other peoples websites
+```
+sudo useradd -m limited-user
+```
 
------------------------------
-> Line one
-> line two
-> line three
-> > Indented quote
-> > line two of indented quote
-> Line four
-> line five
-> line six
------------------------------
+The option ``ForceCommand`` can be omitted if the shell is set to a non-shell like ``/bin/false`` (or ``/bin/true``) as ``/bin/false -c [command]`` won't do anything.
 
+Now the client can only connect to port 62222 on the loopback address of the server over SSH (it will not listen on the public IP address)
 
-Markdown lets you be lazy
+Disabling ``AllowTcpForwarding`` would also disallow the use of ``-R``, thus defeating the use of such a restricted account for forwarding a single port. ``PermitOpen localhost:62222`` assumes that port 62222 on the server is never in use because the client can happily connect to it and listen on it too.
 
------------------------------
-> Line one
-line two
-line three
-> > Indented quote
-> > line two of indented quote
-Line four
-line five
-> line six
------------------------------
+If TCP forwarding is allowed in the system-wide configuration and disabled password-based authentication, you can use per-key settings as well. Edit ``~/.ssh/authorized_keys`` and add the next options before the ``ssh-`` (with a space between the options and ssh-):
 
+```
+command="echo 'This account can only be used for [reason]'",no-agent-forwarding,no-X11-forwarding,permitopen="localhost:62222"
+```
 
-Lists
------
+### Verify
 
- * Red
- * Green
- * Blue
+To be sure that it works as expected, some test cases need to be run. 
+In the below commands, ``host`` should be replaced by the actual login if it's not set in ``~/.ssh/config``. 
+Behind the command, a command is shown that should be executed on either the client or server (as specified).
 
- - The number one
- - second thing
- - three
+```
+# connection closed:
+ssh host
+# connection closed (/bin/date is not executed):
+ssh host /bin/date
+# administratively prohibited (2x):
+ssh host -N -D 62222 # client: curl -I --socks5 localhost:62222 example.com
+ssh host -N -L 8080:example.com:80 # client: curl -I localhost:8080
+sftp host
+# should be possible because the client should forward his SSH server
+ssh host -N -R 8080:example.com:80 # server: curl -I localhost:8080
+# This works, it forwards the client SSH to the server
+ssh host -N -R 62222:localhost:22
+# unfortunately, the client can listen on that port too. Not a big issue
+ssh host -N -L 1234:localhost:62222
+```
 
+## Conclusion
 
-Images
-------
+Checklist: The SSH user should not able to:
 
-![Alt Text](/path/to/image.jpg "optional title")
+ * execute shell commands - done
+ * access files or upload files to the server - done
+ * use the server as proxy (e.g. webproxy) - done
+access local services which were otherwise not publicly accessible due to a firewall - partially, the client cannot access other ports than 62222, but can listen and connect to port 62222 on the server
+ * kill the server - done (note that these checks are limited to the SSH server. If you've an other vulnerable service on the machine, it could allow a possible attacker to run commands, kill the server, etc. )
 
-Alternatively, you can just use html syntax.
