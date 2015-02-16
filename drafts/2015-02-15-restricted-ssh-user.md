@@ -66,8 +66,6 @@ Files and their options that alter behavior are:
      ``PermitOpen IPv4_addr:port`` <br/>
      ``PermitOpen [IPv6_addr]:port`` <br/>
      Multiple forwards may be specified by separating them with whitespace. An argument of 'any' can be used to remove all restrictions and permit any forwarding requests. By default all port forwarding requests are permitted.
-
- * 
    * ``PermitTunnel`` - Specifies whether tun(4) device forwarding is allowed. The default is 'no'
    * ``X11Forwarding`` - Specifies whether X11 forwarding is permitted. The default is 'no'
 
