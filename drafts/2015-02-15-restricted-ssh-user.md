@@ -49,26 +49,26 @@ From the _Authentication_ section of the [manual page of sshd(8)](http://manpage
 Files and their options that alter behavior are:
 
  * ``~/.ssh/authorized_keys`` - contains keys which are allowed to connect which can be given options:
- * * ``command="command"`` - The command supplied by the user (if any) is ignored. Note that the client may specify TCP and/or X11 forwarding unless they are explicitly prohibited. Note that this option applies to shell, command or subsystem execution.
- * * ``no-agent-forwarding`` - Forbids authentication agent forwarding when this key is used for authentication.
- * * ``no-port-forwarding`` - Forbids TCP forwarding when this key is used for authentication
- * * ``no-X11-forwarding`` - "Forbids X11 forwarding when this key is used for authentication."
- * * ``permitopen="host:port"`` - Limit local 'ssh -L' port forwarding such that it may only connect to the specified host and port.
+   * ``command="command"`` - The command supplied by the user (if any) is ignored. Note that the client may specify TCP and/or X11 forwarding unless they are explicitly prohibited. Note that this option applies to shell, command or subsystem execution.
+   * ``no-agent-forwarding`` - Forbids authentication agent forwarding when this key is used for authentication.
+   * ``no-port-forwarding`` - Forbids TCP forwarding when this key is used for authentication
+   * ``no-X11-forwarding`` - "Forbids X11 forwarding when this key is used for authentication."
+   * ``permitopen="host:port"`` - Limit local 'ssh -L' port forwarding such that it may only connect to the specified host and port.
  * ``~/.ssh/environment`` - This file is read into the environment at login (if it exists). Environment processing is disabled by default and is controlled via the PermitUserEnvironment option
  * ``~/.ssh/rc`` - Contains initialization routines to be run before the user's home directory becomes accessible.
  * ``/etc/ssh/sshd_config`` - the system-wide configuration file
- * * ``AllowAgentForwarding`` - Specifies whether ssh-agent(1) forwarding is permitted.
- * * ``AllowTcpForwarding``
- * * ``ForceCommand`` - "Forces the execution of the command specified by ForceCommand, ignoring any command supplied by the client and ~/.ssh/rc if present. The command is invoked by using the user's login shell with the -c option."
- * * ``GatewayPorts`` - "Specifies whether remote hosts are allowed to connect to ports forwarded for the client. By default, sshd(8) binds remote port forwardings to the loopback address. This prevents other remote hosts from connecting to forwarded ports. GatewayPorts can be used to specify that sshd should allow remote port forwardings to bind to non-loopback addresses, thus allowing other hosts to connect."
- * * ``PermitOpen``:
- > Specifies the destinations to which TCP port forwarding is permitted. The forwarding specification must be one of the following forms:
- > ``PermitOpen host:port``
- > ``PermitOpen IPv4_addr:port``
- > ``PermitOpen [IPv6_addr]:port``
- > Multiple forwards may be specified by separating them with whitespace. An argument of 'any' can be used to remove all restrictions and permit any forwarding requests. By default all port forwarding requests are permitted.
- * * ``PermitTunnel`` - Specifies whether tun(4) device forwarding is allowed. The default is 'no'
- * * ``X11Forwarding`` - Specifies whether X11 forwarding is permitted. The default is 'no'
+   * ``AllowAgentForwarding`` - Specifies whether ssh-agent(1) forwarding is permitted.
+   * ``AllowTcpForwarding``
+   * ``ForceCommand`` - "Forces the execution of the command specified by ForceCommand, ignoring any command supplied by the client and ~/.ssh/rc if present. The command is invoked by using the user's login shell with the -c option."
+   * ``GatewayPorts`` - "Specifies whether remote hosts are allowed to connect to ports forwarded for the client. By default, sshd(8) binds remote port forwardings to the loopback address. This prevents other remote hosts from connecting to forwarded ports. GatewayPorts can be used to specify that sshd should allow remote port forwardings to bind to non-loopback addresses, thus allowing other hosts to connect."
+   * ``PermitOpen``:
+   > Specifies the destinations to which TCP port forwarding is permitted. The forwarding specification must be one of the following forms:
+   > ``PermitOpen host:port``
+   > ``PermitOpen IPv4_addr:port``
+   > ``PermitOpen [IPv6_addr]:port``
+   > Multiple forwards may be specified by separating them with whitespace. An argument of 'any' can be used to remove all restrictions and permit any forwarding requests. By default all port forwarding requests are permitted.
+   * ``PermitTunnel`` - Specifies whether tun(4) device forwarding is allowed. The default is 'no'
+   * ``X11Forwarding`` - Specifies whether X11 forwarding is permitted. The default is 'no'
 
 ----------------------------------------
 
