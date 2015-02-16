@@ -12,7 +12,7 @@ summary: an askubuntu.com response!
 
 Adding a restricted user consists of two parts: 1. Creating the user 2. Configuring the SSH daemon (sshd)
 
-!! Configuring sshd
+## Configuring sshd
 
 The best place to get known to the possibilities of SSH is by reading the related manual pages:
 
@@ -21,16 +21,16 @@ The best place to get known to the possibilities of SSH is by reading the relate
  * [sshd(8)](http://manpages.ubuntu.com/manpages/natty/en/man8/sshd.8.html)
  * [sshd_config(5)](http://manpages.ubuntu.com/manpages/natty/en/man5/sshd_config.5.html)
 
-!!! Where can SSH client perform actions?
+### Where can SSH client perform actions?
 
 Before you can restrict something, you need to know the features of SSH. Spitting through the manual pages yields:
 
  * Shell commands execution
  * File upload through sftp
  * Port forwarding
- * * The client forwards an (un)used port to the server
- * * The server forwards his port to the client
- * * The server forwards a port of another host to the client (proxy-ish)
+ ** The client forwards an (un)used port to the server
+ ** The server forwards his port to the client
+ ** The server forwards a port of another host to the client (proxy-ish)
  * X11 forwarding (display forwarding)
  * Authentication agent forwarding
  * Forwarding of a tunnel device
@@ -44,7 +44,7 @@ From the _Authentication_ section of the [manual page of sshd(8)](http://manpage
 > The sides then enter session mode. 
 > In this mode, either side may send data at any time, and such data is forwarded to/from the shell or command on the server side, and the user terminal in the client side.
 
-!!! Options for restricting SSH features
+### Options for restricting SSH features
 
 Files and their options that alter behavior are:
 
