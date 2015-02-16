@@ -28,9 +28,9 @@ Before you can restrict something, you need to know the features of SSH. Spittin
  * Shell commands execution
  * File upload through sftp
  * Port forwarding
- ** The client forwards an (un)used port to the server
- ** The server forwards his port to the client
- ** The server forwards a port of another host to the client (proxy-ish)
+   * The client forwards an (un)used port to the server
+   * The server forwards his port to the client
+   * The server forwards a port of another host to the client (proxy-ish)
  * X11 forwarding (display forwarding)
  * Authentication agent forwarding
  * Forwarding of a tunnel device
