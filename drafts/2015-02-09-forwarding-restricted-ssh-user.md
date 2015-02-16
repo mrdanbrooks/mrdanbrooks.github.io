@@ -13,7 +13,7 @@ The internet is a dangerous place to be a server, and protecting servers from ou
 Having a whole network of devices, I decided it would just be easier to keep them all hidden from the rest of the internet, and use a tunnel to access them. 
 SSH tunnels, while slow, are easy to set up and dont require super powers to get running on other peoples machines. 
 Another downside to SSH tunnels is that they require having a user account to SSH into.
-
+Normally you just ssh into a machine using a regular user account, but if that user gets comprimised the attacker would then have a platform for installing software on to attack other machines on the network.
 To be safe, I wanted my ssh tunnel to only accept one user who didn't have a password (key authentication only) and who couldn't execute commands or use a shell.
 
 
@@ -83,7 +83,7 @@ $ sudo chgrp NEWUSER ~/.ssh/NEWUSER_authorized_keys
 $ sudo chmod 640 ~/.ssh/NEWUSER_authorized_keys
 ```
 
-!! Locking things down
+## Locking things down
 
 Here are some additional settings we want to impose upon our NEWUSER. [[link]][1]
 We will add these to the ``/etc/ssh/sshd_config`` file.
@@ -102,7 +102,8 @@ Match User NEWUSER
 ```
 
 
-!! Testing SSHD settings
+## Testing SSHD settings
+
 Before we restart the sshd daemon and potentially break everything and lock ourselves out, lets test to make sure the changes we made to the configuration file are correct.
 
 ```
