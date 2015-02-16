@@ -10,8 +10,8 @@ published: true
 summary: Creating a user that can only be used for ssh port forwarding
 ---
 The internet is a dangerous place to be a server, and protecting servers from outside attacks takes effort.
-Having a whole network of devices, I decided it would just be easier to keep them all hidden from the rest of the internet, and tunnel into them. 
-SSH tunnels, while slow, are easy to set up and dont require super powers to get running. 
+Having a whole network of devices, I decided it would just be easier to keep them all hidden from the rest of the internet, and use a tunnel to access them. 
+SSH tunnels, while slow, are easy to set up and dont require super powers to get running on other peoples machines. 
 Another downside to SSH tunnels is that they require having a user account to SSH into.
 
 To be safe, I wanted my ssh tunnel to only accept one user who didn't have a password (key authentication only) and who couldn't execute commands or use a shell.
