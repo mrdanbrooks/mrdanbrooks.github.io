@@ -44,36 +44,6 @@ From the _Authentication_ section of the [manual page of sshd(8)](http://manpage
 > The sides then enter session mode. 
 > In this mode, either side may send data at any time, and such data is forwarded to/from the shell or command on the server side, and the user terminal in the client side.
 
-	
-TL;DR - go to the bottom of the answer, "Applying the restrictions"
-
-Adding a restricted user consists of two parts: 1. Creating the user 2. Configuring the SSH daemon (sshd)
-
-Configuring sshd
-The best place to get known to the possibilities of SSH is by reading the related manual pages:
-
-ssh(1)
-ssh_config(5)
-sshd(8)
-sshd_config(5)
-Where can SSH client perform actions?
-Before you can restrict something, you need to know the features of SSH. Spitting through the manual pages yields:
-
-Shell commands execution
-File upload through sftp
-Port forwarding
-The client forwards an (un)used port to the server
-The server forwards his port to the client
-The server forwards a port of another host to the client (proxy-ish)
-X11 forwarding (display forwarding)
-Authentication agent forwarding
-Forwarding of a tunnel device
-From the Authentication section of the manual page of sshd(8):
-
-If the client successfully authenticates itself, a dialog for preparing the session is entered. At this time the client may request things like allocating a pseudo-tty, forwarding X11 connections, forwarding TCP connections, or forwarding the authentication agent connection over the secure channel.
-
-After this, the client either requests a shell or execution of a command. The sides then enter session mode. In this mode, either side may send data at any time, and such data is forwarded to/from the shell or command on the server side, and the user terminal in the client side.
-
 !!! Options for restricting SSH features
 
 Files and their options that alter behavior are:
