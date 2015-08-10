@@ -9,10 +9,6 @@ day: 10
 published: true
 summary: Explains how to add custom images to the table in BibDesk
 ---
-
-Adding Custom Column Header Images and Titles to BibDesk*
-========================================================
-
 By default, the main table shows the name of the field in the headers of the column, and for the `Local-Url` and `Url` fields it shows a small file icon and a `@` symbol respecitively. 
 Sometimes you might want more columns to show images in the header to identify the column, for example if you have added custom Local File or Remote URL fields in the Custom Types and Fields.
 
