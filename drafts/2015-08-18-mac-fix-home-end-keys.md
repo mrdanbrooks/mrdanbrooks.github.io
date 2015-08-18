@@ -42,6 +42,41 @@ Below is a copy of the instructions posted on [phatness.com](http://phatness.com
 > 4) Open that box (err, close and reopen any applications to take affect)
 > 
 
+Apparently, some people report having trouble in the terminal even after applying the above fix.
+I use iTerm2 instead of Terminal.app, and I have not noticed this problem yet.
+For the sake of completeness, here is the suggested fix (from the same source)
+
+> You must setup mappings in Terminal separately. Open up preferences for Terminal.app, and under the Keyboard tab, set the actions for the following keys (Change action to ‘Send string to shell’):
+> 
+> \033 is the code for escape. Press the Esc key rather than typing it out.
+> 
+> ```
+> Key		Escape Sequence
+> Home		\033[1~
+> End		\033[4~
+> Page Up		\033[5~
+> Page Down	\033[6~
+> ```
+> 
+> Setting up terminal only gets you part of the way. You also need to configure bash. Go create or edit ~/.inputrc and add the following:
+> 
+> ```
+> "\e[1~": beginning-of-line
+> "\e[4~": end-of-line
+> "\e[5~": history-search-backward
+> "\e[6~": history-search-forward
+> "\e[3~": delete-char
+> "\e[2~": quoted-insert
+> "\e[5C": forward-word
+> "\e[5D": backward-word
+> "\e\e[C": forward-word
+> "\e\e[D": backward-word
+> set completion-ignore-case On
+> ```
+> 
+> Now everything should be working the way you expect. (Except for Firefox, but you can figure that one out on your own.)
+
+
 ----------------------------------------
 
 To use this template:
