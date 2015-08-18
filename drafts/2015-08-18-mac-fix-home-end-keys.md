@@ -16,7 +16,7 @@ Additionally, in osx the pg-up and pg-down keys simply shift the viewport up or 
 Fortunately, [the fix is easy](http://phatness.com/2007/08/fix-home-and-end-keys-on-mac-os-x/).
 Below is a copy of the instructions posted on [phatness.com](http://phatness.com) for fixing your mac.
 
-> 1. Create a new text file at:
+> 1) Create a new text file at:
 > 
 > ```
 > Users/[your username]/Library/KeyBindings/DefaultKeyBinding.dict
@@ -24,7 +24,7 @@ Below is a copy of the instructions posted on [phatness.com](http://phatness.com
 > 
 > (If you have already messed with key bindings, this file might already be present.)
 > 
-> 2. Copy and paste this code into the file:
+> 2) Copy and paste this code into the file:
 > 
 > ```
 > {
@@ -37,9 +37,9 @@ Below is a copy of the instructions posted on [phatness.com](http://phatness.com
 > }
 > ```
 > 
-> 3. Put your junk in that box (err, save DefaultKeyBinding.dict)
+> 3) Put your junk in that box (err, save DefaultKeyBinding.dict)
 > 
-> 4. Open that box (err, close and reopen any applications to take affect)
+> 4) Open that box (err, close and reopen any applications to take affect)
 > 
 
 ----------------------------------------
