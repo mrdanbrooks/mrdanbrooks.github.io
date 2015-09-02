@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ROS Service call custom timeouts
+title: ROS Services Custom Timeouts
 tags: linux python
 category: programming
 year: 2015
@@ -10,17 +10,17 @@ published: true
 summary: ROS Service calls are blocking functions. Here is a workaround.
 ---
 
-ROS has several [communication patterns](http://wiki.ros.org/ROS/Patterns/Communication) can be used to allow interprocess communication.
+ROS has several [communication patterns](http://wiki.ros.org/ROS/Patterns/Communication) that can be used for interprocess communication.
 These include Topics (publish/subscribe), Services (request/reply), and Actions  (asynchronous task control).
 
-Service calls have been designed to mimic the way in which regular functions are written and used.
+Service calls were been designed to mimic the way in which regular functions are written and used.
 This is nice since it is the behavior most people would want and expect.
 On the server side, the function is often written almost exactly the same way you would write any other function, and then wrapped as a ROS Service to be exposed to other processes (ROS Nodes).
 On the client side, nodes receive a callable function that is called in almost the same way as any other function.
 This makes ROS Services a very attractive system for creating APIs to control more complex (and sometimes hidden) functionality. 
 
 Unfortunately, Services in ROS have a few problems. 
-The most immediately obvious problem is that there are far fewer tools available for working with Services then there are for working with their publish/subscribe counterparts (Topics).
+One of the most unfortunate ones is that there are far fewer tools available for working with Services then there are for working with their publish/subscribe counterparts (Topics).
 For example, it is currently not possible to monitor or log transactions between service clients and service servers.
 
 Today, however, I ran into a much less obvious problem with Services. 
