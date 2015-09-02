@@ -40,6 +40,8 @@ In the case of the commercial product I was using, this was not an option.
 
 The solution I came up with was to execute the service from a separate thread, allowing the call to take as long as it likes.
 If it takes too long, my code will simply continue on using a default value while the thread finishes running its course in the background.
+I've included the code below in case it might be helpful to someone else in the future. 
+
 
 ```
 import time
@@ -47,30 +49,31 @@ import threading
 class ServiceTimeouter(object):
     """ Ros services cannot be timed out. Occasionally the IK solver would take
         up to 5 seconds to respond. This is a workaround class. """
-    def __init__(self, srv, param=(), kwargs={}):
+
+    def __init__(self, srv, args=(), kwargs={}):
         self.srv = srv
-        self.param = param
+        self.args = args
         self.kwargs = kwargs
         self.timeout = 0.5
         self.retval = None
         self.returned = False
-        self.lock = threading.Lock()
         self.thread = threading.Thread(target=self._call_thread)
+
     def _call_thread(self):
         try:
-            self.retval = self.srv(*self.param, **self.kwargs)
+            self.retval = self.srv(*self.args, **self.kwargs)
             self.returned = True
         except rospy.ServiceException, e:
             rospy.loginfo("Service call failed: %s" % (e,))
         except AttributeError:
             rospy.loginfo("Socket.close() exception. Socket has become 'None'")
+
     def call(self):
         self.thread.start()
         timeout = time.time() + self.timeout
         while time.time() < timeout and self.thread.isAlive():
             time.sleep(0.001)
         if not self.returned:
-            print "timed out"
-            return None
+            raise Exception("Service call took too long!")
         return self.retval
 ```
