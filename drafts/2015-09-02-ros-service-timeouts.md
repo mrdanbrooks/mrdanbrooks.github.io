@@ -24,15 +24,15 @@ One of the most unfortunate problems is that there are far fewer tools available
 For example, it is not currently possible to monitor or log transactions between service clients and service servers.
 
 Today, however, I ran into a much less obvious problem with Services that I encountered while working with a product whose developers had used ROS Services for its API. 
-Everything would run smoothly most of the time.
-However, occasionally the service call would take MUCH longer to return - so much longer that it was causing problems.
+Everything would run smoothly most of the time, but occasionally the service call would take MUCH longer to return - so much longer that it was causing problems.
 Thus, I wanted to be able to set an upper bound the length of time the service would run for.
 If the computation could not be completed within a certain time period, the results would no longer be useful to me and I wanted to start a new computation as soon as possible with my new parameters. 
 
-But is no built-in way to do this.
+There is currently no built-in way to do this.
 Service calls block the client from continuing to execute until they return a value.
 Furthermore, there is no mechanism built into service calls to allow a client to specify to a server how long the client is willing to wait for an answer. 
 The result is that the client is forced to wait for server to return a value to it.
+It turns out that this has been a [known problem](https://github.com/ros/ros_comm/issues/152) for several years, and there is still no fix for it.
 
 One possible solution to this problem is for the service server to add a timeout parameter to the service call.
 However, this is only realistic in cases where the author of the client can alter or convince someone else to alter the code for the service server.
