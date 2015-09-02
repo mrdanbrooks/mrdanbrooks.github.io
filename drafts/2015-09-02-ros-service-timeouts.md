@@ -15,11 +15,11 @@ These include Topics (publish/subscribe), Services (request/reply), and Actions 
 Actions are more flexible and robust then Services, and are now considered the preferred way of doing things.
 However, there is still a lot of code that uses Services.
 
-Service calls were designed to mimic the way regular functions are written and used.
+Service calls are designed to mimic the way regular functions are written and used.
 This is convenient since it is the behavior most people would want and expect.
 On the server side, the function is often written almost exactly the same way you would write any other function, and then wrapped as a ROS Service to be exposed to other processes (ROS Nodes).
 On the client side, nodes receive a callable function that is used the same as any other function.
-Add in the fact that multiple languages have ROS  bindings and it is not difficult to understand why ROS Services are very attractive to developers creating APIs. 
+Add in the fact that multiple languages have ROS  bindings and it is not difficult to understand why ROS Services are very attractive to developers who need to create an API for their product. 
 
 Unfortunately, Services in ROS have a few problems. 
 One of the most unfortunate problems is that there are far fewer tools available for working with Services then there are for working with their publish/subscribe counterparts (Topics).
