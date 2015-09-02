@@ -20,11 +20,10 @@ On the client side, nodes receive a callable function that is called in almost t
 This makes ROS Services a very attractive system for creating APIs to control more complex (and sometimes hidden) functionality. 
 
 Unfortunately, Services in ROS have a few problems. 
-One of the most unfortunate ones is that there are far fewer tools available for working with Services then there are for working with their publish/subscribe counterparts (Topics).
-For example, it is currently not possible to monitor or log transactions between service clients and service servers.
+One of the most unfortunate problems is that there are far fewer tools available for working with Services then there are for working with their publish/subscribe counterparts (Topics).
+For example, it is not currently possible to monitor or log transactions between service clients and service servers.
 
-Today, however, I ran into a much less obvious problem with Services. 
-Some developers had used ROS Services to create an API for a product I was working with.
+Today, however, I ran into a much less obvious problem with Services that I encountered while working with a product whose developers had used ROS Services for its API. 
 Everything would run smoothly most of the time.
 However, occasionally the service call would take MUCH longer to return - so much longer that it was causing problems.
 Thus, I wanted to be able to set an upper bound the length of time the service would run for.
