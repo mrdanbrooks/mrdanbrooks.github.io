@@ -12,6 +12,8 @@ summary: ROS Service calls are blocking functions. Here is a workaround.
 
 ROS has several [communication patterns](http://wiki.ros.org/ROS/Patterns/Communication) that can be used for interprocess communication.
 These include Topics (publish/subscribe), Services (request/reply), and Actions  (asynchronous task control).
+Actions are more flexible and robust then Services, and are now considered the preferred way of doing things.
+However, there is still a lot of code that uses Services.
 
 Service calls were been designed to mimic the way in which regular functions are written and used.
 This is nice since it is the behavior most people would want and expect.
@@ -21,24 +23,24 @@ This makes ROS Services a very attractive system for creating APIs to control mo
 
 Unfortunately, Services in ROS have a few problems. 
 One of the most unfortunate problems is that there are far fewer tools available for working with Services then there are for working with their publish/subscribe counterparts (Topics).
-For example, it is not currently possible to monitor or log transactions between service clients and service servers.
+For example, it is not currently possible to monitor or log transactions between Service clients and Service servers.
 
 Today, however, I ran into a much less obvious problem with Services that I encountered while working with a product whose developers had used ROS Services for its API. 
-Everything would run smoothly most of the time, but occasionally the service call would take MUCH longer to return - so much longer that it was causing problems.
-Thus, I wanted to be able to set an upper bound the length of time the service would run for.
+Everything would run smoothly most of the time, but occasionally the Service call would take MUCH longer to return - so much longer that it was causing problems.
+Thus, I wanted to be able to set an upper bound the length of time the Service would run for.
 If the computation could not be completed within a certain time period, the results would no longer be useful to me and I wanted to start a new computation as soon as possible with my new parameters. 
 
 There is currently no built-in way to do this.
 Service calls block the client from continuing to execute until they return a value.
-Furthermore, there is no mechanism built into service calls to allow a client to specify to a server how long the client is willing to wait for an answer. 
+Furthermore, there is no mechanism built into Service calls to allow a client to specify to a server how long the client is willing to wait for an answer. 
 The result is that the client is forced to wait for server to return a value to it.
 It turns out that this has been a [known problem](https://github.com/ros/ros_comm/issues/152) for several years, and there is still no fix for it.
 
-One possible solution to this problem is for the service server to add a timeout parameter to the service call.
-However, this is only realistic in cases where the author of the client can alter or convince someone else to alter the code for the service server.
+One possible solution to this problem is for the Service server to add a timeout parameter to the Service call.
+However, this is only realistic in cases where the author of the client can alter or convince someone else to alter the code for the Service server.
 In the case of the commercial product I was using, this was not an option.
 
-The solution I came up with was to execute the service from a separate thread, allowing the call to take as long as it likes.
+The solution I came up with was to execute the Service from a separate thread, allowing the call to take as long as it likes.
 If it takes too long, my code will simply continue on using a default value while the thread finishes running its course in the background.
 I've included the code below in case it might be helpful to someone else in the future. 
 
