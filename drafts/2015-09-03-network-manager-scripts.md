@@ -26,17 +26,19 @@ On server installations, you can simply put this in the post-up part of ``/etc/n
 On desktops though, it is better to put them in a script that Network Manager can use.
 From the man pages
 
-> NetworkManager  will  execute  scripts  in the /etc/NetworkManager/dis‐
-> patcher.d directory  in  alphabetical  order  in  response  to  network
-> events.  Each script should be:
-> (a) a regular file
-> (b) owned by root
-> (c) not writable by group or other
-> (d) not set-uid
-> (e) and executable by the owner
->
-> Each  script receives two arguments, the first being the interface name
-> of the device just activated, and second an action.
+```
+ NetworkManager  will  execute  scripts  in the /etc/NetworkManager/dis‐
+ patcher.d directory  in  alphabetical  order  in  response  to  network
+ events.  Each script should be:
+ (a) a regular file
+ (b) owned by root
+ (c) not writable by group or other
+ (d) not set-uid
+ (e) and executable by the owner
+
+ Each  script receives two arguments, the first being the interface name
+ of the device just activated, and second an action.
+```
 
 The actions are ``up``, ``down``, ``vpn-up``, ``vpn-down``, ``hostname``, and ``dhcp4-change``.
 
