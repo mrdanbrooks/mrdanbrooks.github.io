@@ -14,16 +14,16 @@ To be fair, it did _just work_ out of the box.
 Sort of.
 
 I purchased a bluetooth adapter for my headphones to use with my XUbuntu 14.04 desktop at work.
-Bluetooth headphones can work in two different modes: duplex telephony (HSPHFP) or high fedility playback (A2DP).
+Bluetooth headphones can work in two different modes: duplex telephony (HSP/HFP) or high fedility playback (A2DP).
 The duplex telephony mode is more for being used as a phone headset and uses lower quality audio but also allows for microphone input.
 High fedility playback is for listening to music and sounds better.
 
-The headphones adapter worked right away, but they always defaulted to the low quality telephony mode.
-After they connected I could then go and change the mode to A2DP manually, but that got annoying.
-So I disabled the telephony mode.
-The bluetooth would still connect, but it would no longer show up as an audio device in PulseAudio. 
+The headphones adapter worked right away, but it always defaulted to the low quality telephony mode.
+After it connected I could then go and change the mode to A2DP manually, but that got annoying.
+So I disabled the telephony mode, and afterwords the bluetooth would still connect but the device would no longer show up as an audio device in PulseAudio. 
+Awesome.
 
-The fix to get it working again was to run
+The fix to get it working again (according to [askubuntu](http://askubuntu.com/q/366032)) was to run the following commands
 
 ```
 $ sudo pactl load-module module-bluetooth-discover
@@ -31,6 +31,16 @@ $ sudo service bluetooth restart
 ```
 
 and then re-connect the bluetooth device.
+
+So, I then wondered how I could make this happen automatically.
+The answer should have been to edit ``/etc/pulse/default.pa`` and add the line 
+
+```
+load-module module-bluetooth-discover
+```
+
+but when I checked the file, it was already included! 
+
 
 Apparently, this is a problem with blueman, the bluetooth software.
 According to [this bug report](https://github.com/blueman-project/blueman/issues/64), blueman actually _unloads_ the pulse audio bluetooth-discover module. 
