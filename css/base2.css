@@ -89,7 +89,7 @@ header {
 }
 
 footer {
-   margin: 0 0 20px 0;
+   margin: 20px 0 0 0;
    text-align: right;
    background-color: #eee;
    font-size: 13px;
