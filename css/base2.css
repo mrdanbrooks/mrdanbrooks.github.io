@@ -77,9 +77,22 @@ hr:before {
   padding: 0 20px;
 }
 
+.footer-container {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 20px;
+}
+
 header {
   margin: 0 0 20px 0;
   text-align: right;
+}
+
+footer {
+   margin: 0 0 20px 0;
+   text-align: right;
+   background-color: #eee;
+   font-size: 13px;
 }
 
 ul.nav {
