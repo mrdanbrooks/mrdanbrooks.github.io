@@ -9,10 +9,12 @@ day: 17
 published: true
 summary: If you ever need to download an entire Web site, perhaps for off-line viewing, wget can do the job.
 ---
+Disclaimer
+----------
 
 Below is an article I found to be particularly useful that was written by [Dashamir Hoxha on September 5th, 2008 for www.linuxjournal.com](http://www.linuxjournal.com/content/downloading-entire-web-site-wget).
 I take no credit for the article or contents.
-Websites have a tendency to disappear over time and links die even faster, so I have copied it here to preserve the knowledge.
+Websites have a tendency to disappear over time and links die even faster, so I have copied the content here where I can preserve the knowledge.
 Please support the original content provider by clicking on the link above (if it still works) and then on some of their advertisements.
 
 ----------------------------------------
