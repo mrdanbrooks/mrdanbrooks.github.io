@@ -34,6 +34,7 @@ $ wget \
 This command downloads the Web site www.website.org/tutorials/html/.
 
 The options are:
+
  * ``--recursive``: download the entire Web site.
  * ``--domains website.org``: don't follow links outside website.org.
  * ``--no-parent``: don't follow links outside the directory tutorials/html/.
