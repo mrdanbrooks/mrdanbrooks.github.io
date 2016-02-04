@@ -49,3 +49,10 @@ The options are:
  * ``--no-clobber``: don't overwrite any existing files (used in case the download is interrupted and
     resumed).
 
+My Notes
+========
+
+To download media materials stored on other servers, include the following options
+
+* ``--span-hosts``: Allows recursion to go to other sites. Note this can be dangerous if not used with ``--domains``.
+* ``--domains``: only span hosts in these domains. List should be comma separated with no spaces.
