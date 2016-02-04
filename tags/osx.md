@@ -2,5 +2,5 @@
 layout: blog_by_tag
 title: OS X Posts
 tag: osx
-permalink: osx/
+permalink: tags/osx/
 ---
