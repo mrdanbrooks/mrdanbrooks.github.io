@@ -49,8 +49,7 @@ The options are:
  * ``--no-clobber``: don't overwrite any existing files (used in case the download is interrupted and
     resumed).
 
-My Notes
-========
+### My Notes
 
 To download media materials stored on other servers, include the following options
 
