@@ -1,6 +1,7 @@
 # Dependencies
 markdown:         kramdown
-pygments:         true
+#pygments:         true
+Rouge:         true
 
 # Permalinks
 permalink:        pretty
