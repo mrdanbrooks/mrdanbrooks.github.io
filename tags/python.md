@@ -2,5 +2,5 @@
 layout: blog_by_tag
 title: Python Posts
 tag: python
-permalink: tags/python/
+permalink: /tags/python/
 ---
