@@ -1,3 +1,9 @@
+- category: notes
+  icon: file-text
+
+- category: projects
+  icon: rocket
+
 - category: programming
   icon: code
 
@@ -9,6 +15,3 @@
 
 - category: random
   icon: beer
-
-- category: projects
-  icon: rocket
