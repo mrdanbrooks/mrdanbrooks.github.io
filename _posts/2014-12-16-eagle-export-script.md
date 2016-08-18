@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Exporting for etching in Eagle CAD
+category: notes
 year: 2014
 month: 12
 day: 16

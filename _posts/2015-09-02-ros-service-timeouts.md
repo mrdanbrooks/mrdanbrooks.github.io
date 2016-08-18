@@ -1,8 +1,8 @@
 ---
 layout: post
 title: ROS Services Custom Timeouts
-tags: linux python
-category: programming
+tags: linux python programming
+category: notes
 year: 2015
 month: 09
 day: 02

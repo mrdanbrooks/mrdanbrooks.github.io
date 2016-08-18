@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Restricted a SSH user for port forwarding
-tags: 
-category: systems
+tags: systems
+category: notes
 year: 2015
 month: 02
 day: 09

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Python daemons in sysvinit
-tags: linux python 
-category: systems
+tags: linux python  systems
+category: notes
 year: 2014
 month: 12
 day: 02

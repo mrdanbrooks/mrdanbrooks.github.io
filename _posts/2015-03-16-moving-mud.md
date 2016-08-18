@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Remove Microsoft User Data Folder from Documents
-tags: osx
-category: random
+tags: osx random
+category: notes
 year: 2015
 month: 03
 day: 16

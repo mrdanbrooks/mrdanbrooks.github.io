@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Reading all tex files in a directory
-tags: linux
-category: random
+tags: linux random
+category: notes
 year: 2016
 month: 02
 day: 22

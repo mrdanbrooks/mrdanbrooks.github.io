@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Moving buffers in vim
-category: systems
-tags: vim
+category: notes
+tags: vim, systems
 year: 2013
 month: 6
 day: 3

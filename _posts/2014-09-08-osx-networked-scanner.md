@@ -2,6 +2,7 @@
 layout: post
 title: Sharing a networked scanner from raspberry pi to OS X
 tags: linux osx
+category: notes
 published: true
 summary: How to use TWAIN/SANE to share a scanner to an osx machine.
 ---

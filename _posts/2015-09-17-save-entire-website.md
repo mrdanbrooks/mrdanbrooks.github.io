@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Downloading an Entire Web Site with wget
-tags: linux
-category: random
+tags: linux random
+category: notes
 year: 2015
 month: 09
 day: 17

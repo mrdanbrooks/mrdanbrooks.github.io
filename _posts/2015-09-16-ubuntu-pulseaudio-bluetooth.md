@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Ubuntu + PulseAudio + Blueman = Fail
-tags: linux xfce
-category: systems
+tags: linux xfce systems
+category: notes
 year: 2015
 month: 09
 day: 16

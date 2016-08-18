@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Installing Vim Plugins using Git Subtrees
-tags: vim
-category: programming
+tags: vim programming
+category: notes
 year: 2014
 month: 11
 day: 12

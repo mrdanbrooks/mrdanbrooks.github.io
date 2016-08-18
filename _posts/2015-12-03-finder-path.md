@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Show full path in Finder title bar
-tags: osx 
-category: systems
+tags: osx systems
+category: notes
 year: 2015
 month: 12
 day: 03

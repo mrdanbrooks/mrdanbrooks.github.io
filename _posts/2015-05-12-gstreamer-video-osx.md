@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Streaming video to OSX using gstreamer
-tags: osx
-category: random
+tags: osx random
+category: notes
 year: 2015
 month: 05
 day: 12
