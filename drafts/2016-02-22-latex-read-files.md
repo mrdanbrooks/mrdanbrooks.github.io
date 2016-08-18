@@ -41,9 +41,9 @@ Add the following to your preamble.
 ```
 \makeatletter
 \def\app@exe{\immediate\write18}
-\def\inputAllFiles#1{%
-  \app@exe{ls #1/*.tex | xargs cat >> \jobname.tmp}%
-  \InputIfFileExists{\jobname.tmp}{%
+\def\inputAllFiles#1{
+  \app@exe{ls #1/*.tex | xargs cat >> \jobname.tmp}
+  \InputIfFileExists{\jobname.tmp}{
   }
   \AtEndDocument{\app@exe{rm -f #1/\jobname.tmp}}
   }
@@ -79,8 +79,8 @@ Put the following in your preamble:
       \global\readline\@fileliststream to\@currentfilename
     \endgroup
     \ifx\@currentfilename\@empty \else
-      \typeout{Inputting "#1\@currentfilename".}%
-      \input{#1\@currentfilename}%
+      \typeout{Inputting "#1\@currentfilename".}
+      \input{#1\@currentfilename}
     \fi
   \repeat
   \closein\@fileliststream
