@@ -3,6 +3,7 @@ layout: post
 title: Python daemons in sysvinit
 tags: linux python  systems
 category: notes
+icon: code
 year: 2014
 month: 12
 day: 02

@@ -3,6 +3,7 @@ layout: post
 title: Remove Microsoft User Data Folder from Documents
 tags: osx random
 category: notes
+icon: beer
 year: 2015
 month: 03
 day: 16

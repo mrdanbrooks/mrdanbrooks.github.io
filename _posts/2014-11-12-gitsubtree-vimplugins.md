@@ -3,6 +3,7 @@ layout: post
 title: Installing Vim Plugins using Git Subtrees
 tags: vim programming
 category: notes
+icon: code
 year: 2014
 month: 11
 day: 12

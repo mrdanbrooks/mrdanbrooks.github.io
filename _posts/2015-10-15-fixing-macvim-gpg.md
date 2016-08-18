@@ -3,6 +3,7 @@ layout: post
 title: Debugging MacVim and GPG
 tags: osx vim random
 category: notes
+icon: beer
 year: 2015
 month: 10
 day: 15

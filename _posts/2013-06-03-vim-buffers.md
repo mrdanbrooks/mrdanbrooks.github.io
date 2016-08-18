@@ -3,6 +3,7 @@ layout: post
 title: Moving buffers in vim
 category: notes
 tags: vim, systems
+icon: device-desktop
 year: 2013
 month: 6
 day: 3

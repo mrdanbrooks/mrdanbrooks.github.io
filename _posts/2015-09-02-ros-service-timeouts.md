@@ -3,6 +3,7 @@ layout: post
 title: ROS Services Custom Timeouts
 tags: linux python programming
 category: notes
+icon: code
 year: 2015
 month: 09
 day: 02

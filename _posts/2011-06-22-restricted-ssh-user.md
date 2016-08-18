@@ -3,6 +3,7 @@ layout: post
 title: How to create a restricted SSH user for port forwarding?
 tags: linux, security
 category: notes
+icon: lock
 year: 2011
 month: 06
 day: 22

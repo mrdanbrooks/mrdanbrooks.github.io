@@ -3,6 +3,7 @@ layout: post
 title: Adding Custom Table Column Images to BibDesk
 tags: osx random
 category: notes
+icon: beer
 year: 2015
 month: 08
 day: 10

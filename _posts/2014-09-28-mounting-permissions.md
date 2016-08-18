@@ -3,6 +3,7 @@ layout: post
 title: Setting permissions while mounting a device
 category: notes
 tags: linux systems
+icon: code
 year: 2014
 month: 9
 day: 28

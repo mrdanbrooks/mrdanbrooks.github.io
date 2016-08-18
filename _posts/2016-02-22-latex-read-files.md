@@ -3,6 +3,7 @@ layout: post
 title: Reading all tex files in a directory
 tags: linux random
 category: notes
+icon: bug
 year: 2016
 month: 02
 day: 22

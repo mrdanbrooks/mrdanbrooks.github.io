@@ -3,6 +3,7 @@ layout: post
 title: Downloading an Entire Web Site with wget
 tags: linux random
 category: notes
+icon: beer
 year: 2015
 month: 09
 day: 17

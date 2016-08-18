@@ -3,6 +3,7 @@ layout: post
 title: Show full path in Finder title bar
 tags: osx systems
 category: notes
+icon: device-desktop
 year: 2015
 month: 12
 day: 03

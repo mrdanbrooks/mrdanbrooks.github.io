@@ -3,6 +3,7 @@ layout: post
 title: Stop pyc files from being generated during development
 tags: python programming
 category: notes
+icon: code
 year: 2014
 month: 9
 day: 29

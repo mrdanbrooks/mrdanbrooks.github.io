@@ -3,6 +3,7 @@ layout: post
 title: Fix Volume Control in Xubuntu
 tags: xfce linux systems
 category: notes
+icon: device-desktop
 year: 2014
 month: 6
 day: 4

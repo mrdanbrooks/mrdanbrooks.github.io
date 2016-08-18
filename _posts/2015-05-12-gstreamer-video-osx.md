@@ -3,6 +3,7 @@ layout: post
 title: Streaming video to OSX using gstreamer
 tags: osx random
 category: notes
+icon: beer
 year: 2015
 month: 05
 day: 12

@@ -2,6 +2,7 @@
 layout: post
 title: Exporting for etching in Eagle CAD
 category: notes
+icon: beer
 year: 2014
 month: 12
 day: 16

@@ -3,6 +3,7 @@ layout: post
 title: Disable Google Chrome Automatic Software Update in OSX
 tags: osx
 category: notes
+icon: device-desktop
 year: 2014
 month: 6
 day: 11

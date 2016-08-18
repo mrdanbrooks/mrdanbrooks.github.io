@@ -3,6 +3,7 @@ layout: post
 title: Restricted a SSH user for port forwarding
 tags: systems
 category: notes
+icon: device-desktop
 year: 2015
 month: 02
 day: 09
