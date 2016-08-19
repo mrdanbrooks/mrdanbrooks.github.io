@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Running custom networking scripts with Network Manager
-tags: linux
-category: systems
+tags: linux systems
+category: notes
+icon: device-desktop
 year: 2015
 month: 09
 day: 02

@@ -1,8 +1,9 @@
 ---
 layout: post
 title: If python is interpreted, what are pyc files?
-tags: python
-category: programming
+tags: python programming
+category: notes
+icon: code
 year: 2014
 month: 9
 day: 29

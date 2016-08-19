@@ -2,6 +2,7 @@
 layout: post
 title: Making tags work with Github pages
 published: true
+category: notes
 summary: How to get github pages to render tag list pages for you.
 ---
 

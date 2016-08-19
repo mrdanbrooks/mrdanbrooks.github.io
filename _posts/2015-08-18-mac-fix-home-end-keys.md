@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Fixing the behavior of the home, end, pg-up, and pg-down keys in OSX. 
-tags: osx
-category: systems
+tags: osx systems
+category: notes
+icon: device-desktop
 year: 2015
 month: 08
 day: 18

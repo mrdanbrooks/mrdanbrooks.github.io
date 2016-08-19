@@ -2,17 +2,20 @@
 layout: default
 title: A guide to your digital life
 ---
-
+ 
 <div class="listing">
     {% for post in paginator.posts %}
     <div class="post other link">
-    {% comment %} Custom Icons for Categories {% endcomment %}
+    {% comment %} Custom Icons for Categories, or unique for page if specified {% endcomment %}
     {% assign caticon = "file-text" %}
     {% for symbol in site.data.icons %}
         {% if symbol.category == post.category %}
             {% assign caticon = symbol.icon %}
         {% endif %}
     {% endfor %}
+    {% if post.icon %}
+        {% assign caticon = post.icon %}
+    {% endif %}
     <h2><span class="mega-octicon octicon-{{ caticon }}" style="min-width: 32px;"></span><a href="{{post.url}}">{{ post.title }}</a></h2>
       <p class="post-date">{{ post.date | date_to_string }}
       {% if post.tags.size > 0  %}

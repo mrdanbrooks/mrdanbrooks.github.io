@@ -2,7 +2,8 @@
 layout: post
 title: Sending email with tripwire
 tags: linux apt
-category: programming
+category: notes
+icon: lock
 year: 2014
 month: 10
 day: 24

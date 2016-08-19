@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Mount specific USB device to /storage using udev
-category: systems
-tags: udev linux
+category: notes
+tags: udev linux systems
+icon: device-desktop
 year: 2014
 month: 9
 day: 4
