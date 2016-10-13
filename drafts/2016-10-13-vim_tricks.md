@@ -10,6 +10,16 @@ day: 13
 published: true
 summary: How to use skip about on a line like a champ.
 ---
+ 
+ *Find* moves the cursor left or right along a line and stops _on_ the next instance of the specified character.
+
+ - ``fx`` move cursor to the right until you "find" the character "x" 
+ - ``Fx`` move cursor to the left  until you "find" the character "x" 
+
+ *Till* moves the cursor left or right along a line and stops _just before_ the next instance of the specified character.
+
+ - ``tx`` move cursor to the right till just before you get to the character "x" 
+ - ``Tx`` move cursor to the left till just before you get to the character "x" 
 
 Lets say I wanted to replate the word _descriptive_ with _long_ in the variable name ``very_descriptive_variable_name``, with the cursor at the begining.
 
