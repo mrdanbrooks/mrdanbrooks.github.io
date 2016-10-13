@@ -12,11 +12,13 @@ summary: How to use skip about on a line like a champ.
 ---
  
  **Find** moves the cursor left or right along a line and stops _on_ the next instance of the specified character.
+This is useful when you want to move your cursor to a unique landmark, which I find particularly helpful when setting macros.
 
  - ``fx`` move cursor to the right until you "find" the character "x" 
  - ``Fx`` move cursor to the left  until you "find" the character "x" 
 
  **Till** moves the cursor left or right along a line and stops _just before_ the next instance of the specified character.
+ I find this useful when I am replacing sections of text but don't want to delete the end markers (e.g. Everything between parentheses).
 
  - ``tx`` move cursor to the right till just before you get to the character "x" 
  - ``Tx`` move cursor to the left till just before you get to the character "x" 
