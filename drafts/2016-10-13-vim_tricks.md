@@ -15,6 +15,8 @@ Lets say I wanted to replate the word _descriptive_ with _long_ in the variable 
 
 I could do this by typing ``f_lct_`` and then _long_. 
 
+ - ``f_`` "Find", moves the cursor over the next occurance of _\__
+
 ----------------------------------------
 
 To use this template:
