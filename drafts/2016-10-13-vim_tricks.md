@@ -11,8 +11,9 @@ published: true
 summary: How to use skip about on a line like a champ.
 ---
  
- **Find** moves the cursor left or right along a line and stops _on_ the next instance of the specified character.
-This is useful when you want to move your cursor to a unique landmark, which I find particularly helpful when setting macros.
+ **Find** moves the cursor left or right along a line, stopping _on_ the first instance of the specified character it encounters.
+This is useful when you want to move your cursor to a unique landmark, which is great for moving around text that has lots of syntax in it.
+I find this particularly helpful when setting macros.
 
  - ``fx`` move cursor to the right until you "find" the character "x" 
  - ``Fx`` move cursor to the left  until you "find" the character "x" 
@@ -27,9 +28,8 @@ This is useful when you want to move your cursor to a unique landmark, which I f
 Example
 -------
 
-Lets say I wanted to replace the word _descriptive_ with _long_ in the variable name ``very_descriptive_variable_name``, with the cursor at the begining.
-
-I could do this by typing ``f_lct_`` and then _long_. 
+Lets say I wanted to replace the word _descriptive_ with _long_ in the variable name ``very_descriptive_variable_name``, with the cursor at the begining of the variable name (on top of the ``v``). 
+Of course there are several different ways I could do this, but I could do it using Find and Till by typing ``f_lct_`` and then _long_. 
 
  - ``f_`` "Find", moves the cursor over the next occurance of \_
  - ``l`` We want to keep the \_ so we move one space right
