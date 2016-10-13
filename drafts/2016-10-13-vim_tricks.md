@@ -28,12 +28,12 @@ I find this particularly helpful when setting macros.
 Example
 -------
 
-Lets say I wanted to replace the word _descriptive_ with _long_ in the variable name ``very_descriptive_variable_name``, with the cursor at the begining of the variable name (on top of the ``v``). 
+Lets say I wanted to replace the word _descriptive_ with _long_ in the variable name ``very_descriptive_variable_name``, with the cursor at the beginning of the variable name (on top of the ``v``). 
 Of course there are several different ways I could do this, but I could do it using Find and Till by typing ``f_lct_`` and then _long_. 
 
- - ``f_`` "Find", moves the cursor over the next occurance of \_
+ - ``f_`` "Find", moves the cursor over the next occurrence of \_
  - ``l`` We want to keep the \_ so we move one space right
- - ``ct_`` "Change", "Till", removes all the text from the current position till the next occurance of \_ and puts us in insert mode
+ - ``ct_`` "Change", "Till", removes all the text from the current position till the next occurrence of \_ and puts us in insert mode
 
 ----------------------------------------
 
