@@ -15,8 +15,9 @@ Lets say I wanted to replate the word _descriptive_ with _long_ in the variable 
 
 I could do this by typing ``f_lct_`` and then _long_. 
 
- - ``f_`` "Find", moves the cursor over the next occurance of _
- - ``l`` We want to keep the \_, so we move one space right
+ - ``f_`` "Find", moves the cursor over the next occurance of \_
+ - ``l`` We want to keep the \_ so we move one space right
+ - ``ct_`` "Change", "Till", removes all the text from the current position till the next occurance of \_ and puts us in insert mode
 
 ----------------------------------------
 
