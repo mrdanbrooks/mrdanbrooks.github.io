@@ -11,11 +11,11 @@ published: true
 summary: How to use skip about on a line like a champ.
 ---
 
-Lets say I wanted to replate the word _descriptive_ with _long_ in the variable name ``very_descriptive_variable_name``, with the cursor at the begining.
+Lets say I wanted to replate the word _descriptive_ with _long_ in the variable name ``very descriptive variable name``, with the cursor at the begining.
 
-I could do this by typing ``f_lct_`` and then _long_. 
+I could do this by typing ``f lct `` and then _long_. 
 
- - ``f_`` "Find", moves the cursor over the next occurance of _\__
+``f `` "Find", moves the cursor over the next occurance of 
 
 ----------------------------------------
 
