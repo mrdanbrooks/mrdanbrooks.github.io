@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Vim Tricks: Find and Till
+title: Vim Tricks\: Find and Till
 tags: vim
 category: notes
 icon: beer 
