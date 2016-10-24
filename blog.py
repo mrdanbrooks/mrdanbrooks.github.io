@@ -71,6 +71,25 @@ def cmd_draft(pattern):
     except MultipleFilesFoundError as e: 
         print e
 
+def cmd_edit(pattern):
+    posts_path = find_subdir(script_path, "_posts")
+    try:
+        file_name = find_file(posts_path, pattern)
+        # one file found - edit existing post
+        if not prompt_yesno("Edit '%s'?" % file_name):
+            exit(0)
+        edit_file(os.path.join(posts_path, file_name))
+        print "Saving changes to file."
+        git_stage(os.path.join(posts_path, file_name))
+        cmd_git_push()
+        print "done"
+    except FileNotFoundError:
+        print "No existing posts found matching pattern '%s'." % pattern
+    except MultipleFilesFoundError as e: 
+        print e
+
+
+
 def cmd_new(name, datestr=None):
     drafts_path = find_subdir(script_path, "drafts")
     if datestr is None:
@@ -136,7 +155,7 @@ def cmd_git_push():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("cmd", type=str, choices=["new", "draft", "publish", "post", "push"])
+    parser.add_argument("cmd", type=str, choices=["new", "draft", "publish", "post", "push", "edit"])
     parser.add_argument("name", type=str)
     args = parser.parse_args()
     git_pull()
@@ -148,5 +167,7 @@ if __name__ == "__main__":
         cmd_git_push()
     elif args.cmd == "post":
         cmd_post(args.name)
+    elif args.cmd == "edit":
+        cmd_edit(args.name)
 
 
