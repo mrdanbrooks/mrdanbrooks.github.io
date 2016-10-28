@@ -2,7 +2,7 @@
 layout: post
 title: Port Forwarding in OpenWRT
 tags: linux
-category: systems
+category: notes
 year: 2014
 month: 11
 day: 08
