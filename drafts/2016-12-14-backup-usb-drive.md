@@ -16,7 +16,7 @@ Making backups is easy, but I'm always paranoid that I won't do something correc
 Thus, I am documenting the process I found to be reliable (if not the most efficient) using linux systems.
 
 
-### Backing up
+## Backing up
 
 To create a backup of a USB drive, you first need to determine the device handle as listed in ``/dev``.
 Then, you can use ``dd`` to create a bit-by-bit copy.
@@ -48,7 +48,7 @@ Disk identifier: 0x00000000
 usbdrive.img1          *          255     1961983      980864+   b  W95 FAT32
 ```
 
-### Testing the backup
+## Testing the backup
 
 Now, to convince yourself that the backup image is good by mounting it.
 Trying to just mount the device straight up is unlikely to work.
@@ -62,8 +62,8 @@ mount: wrong fs type, bad option, bad superblock on /dev/loop0,
        dmesg | tail  or so
 ```
 
-Adding ``-t vfat'' won't solve this problem (if it were that simple, mount could have figured it out by itself).
-The real problem is that ``mount'' is looking for a filesystem, but what we just gave it was an entire disk devices worth of information.
+Adding ``-t vfat`` won't solve this problem (if it were that simple, mount could have figured it out by itself).
+The real problem is that ``mount`` is looking for a filesystem, but what we just gave it was an entire disk devices worth of information.
 Since the filesystem we are looking for is not necessarily the very first thing on the disk, ``mount`` doesn't know how to handle it.
 The trick is to figure out where the filesystem starts and specify the offset.
 Looking at the information from ``fdisk``, we can see the the FAT32 filesystem starts at sector 255, and each sector is 512 bytes.
@@ -75,7 +75,7 @@ $ mount | grep usbdrive.img
 usbdrive.img on /mnt/usbdrive type vfat (ro)
 ```
 
-### Restoring
+## Restoring
 
 Restoring the USB device to its previous state can be done by running 
 You can then use this image to restore the same drive to its previous state, or put the data onto a new drive (of the same size or larger).
