@@ -119,8 +119,10 @@ def cmd_post(pattern):
         # one file found - edit an existing draft
         if not prompt_yesno("Release draft '%s' as Post?" % file_name):
             exit(0)
-        shutil.move(os.path.join(drafts_path, file_name),
-                    os.path.join(posts_path, file_name))
+#         shutil.move(os.path.join(drafts_path, file_name),
+#                     os.path.join(posts_path, file_name))
+        sp.check_call(["git","mv", os.path.join(drafts_path, file_name), os.path.join(posts_path, file_name)])
+        git_stage(os.path.join(posts_path, file_name))
         #TODO: we need to git mv the file
         cmd_git_push()
         print "done"
@@ -155,7 +157,7 @@ def cmd_git_push():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("cmd", type=str, choices=["new", "draft", "publish", "post", "push", "edit"])
+    parser.add_argument("cmd", type=str, choices=["new", "draft", "post", "push", "edit"])
     parser.add_argument("name", type=str)
     args = parser.parse_args()
     git_pull()
