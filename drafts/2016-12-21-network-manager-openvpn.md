@@ -13,19 +13,19 @@ summary: Using Network Manager for VPN connections.
 
 This guide is for setting up an OpenVPN client on Ubuntu 14.04 using Network Manager.
 
-Step 1: Install the network manager openvpn plugin.
+**Step 1:** Install the network manager openvpn plugin.
 
 ```
 $ sudo apt-get install network-manager-openvpn
 ```
 
-Step 2: Acquire the openvpn documents required: User Certificate (.cer), CA Certificate (.crt), and Private Key (.key).
+**Step 2:** Acquire the openvpn documents required: User Certificate (.cer), CA Certificate (.crt), and Private Key (.key).
 
 
-Step 3: Click on the network-manager icon in the upper right hand corner of the screen; you should see a new menu item titled "VPN Connections".
+**Step 3:** Click on the network-manager icon in the upper right hand corner of the screen; you should see a new menu item titled "VPN Connections".
 
  - Under this item, click on "Configure VPN..."
- - "Add"
+ - Select "Add"
  - Choose Connection Type "OpenVPN"
  - Under gateway, put in your IP Address or domain name.
  - Set authentication type to "Certificates (TLS)"
