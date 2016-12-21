@@ -163,6 +163,7 @@ if __name__ == "__main__":
         cmd_draft(args.name)
     elif args.cmd == "new":
         cmd_new(args.name)
+        cmd_draft(args.name)
     elif args.cmd == "push":
         cmd_git_push()
     elif args.cmd == "post":
