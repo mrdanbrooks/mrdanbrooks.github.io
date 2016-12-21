@@ -3,7 +3,7 @@ layout: post
 title: Setting up OpenVPN Client in Ubuntu 14.04
 tags: linux systems
 category: notes
-icon: beer #weaselpipe.com/icons
+icon: key #weaselpipe.com/icons
 year: 2016
 month: 12
 day: 21
