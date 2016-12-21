@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Setting open OpenVPN Client in Ubuntu 14.04
+title: Setting up OpenVPN Client in Ubuntu 14.04
 tags: linux systems
 category: notes
 icon: beer #weaselpipe.com/icons
@@ -8,7 +8,7 @@ year: 2016
 month: 12
 day: 21
 published: true
-summary: Using Network Manager for VPN connections.
+summary: Configuring Network Manager to use  OpenVPN connections.
 ---
 
 This guide is for setting up an OpenVPN client on Ubuntu 14.04 using Network Manager.
