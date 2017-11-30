@@ -10,8 +10,6 @@ day: 30
 published: true
 summary: How to add a service to finder that copies the path of a file to the clip board.
 ---
-# Adding a Copy Path Service to OSX
-
 I need to capture the path of a file from finder on a regular basis, to create links within documents on my desktop. Finder does not have built-in functionality to copy a files path to the clipboard. I decided to create a service to allow me to do this.
 
 
@@ -25,4 +23,4 @@ I need to capture the path of a file from finder on a regular basis, to create l
 
 Credit
 
-http://osxdaily.com/2013/06/19/copy-file-folder-path-mac-os-x/
+[http://osxdaily.com/2013/06/19/copy-file-folder-path-mac-os-x/](http://osxdaily.com/2013/06/19/copy-file-folder-path-mac-os-x/)
